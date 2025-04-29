@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'Project4_rest_api.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bakendProject4_api',
+        'NAME': 'bakendproject4_api',
         'USER': '',
         'PASSWORD': '',
         'HOST': 'localhost'
