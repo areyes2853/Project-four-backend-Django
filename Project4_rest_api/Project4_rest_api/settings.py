@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-s6jwc@n=l-ort1m+oqvjk_n_$veb_yu=&6-c8w#=x^uen=jtwl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '3.83.236.184']
 
 
 # Application definition
@@ -82,8 +82,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'bakendproject4_api',
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'ubuntu',
+        'PASSWORD': 'ubuntu',
         'HOST': 'localhost'
     }
 }
