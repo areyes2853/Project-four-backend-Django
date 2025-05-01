@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 # Create your views here.
 from rest_framework import generics
-from .models import Book, Movie
-from .serializers import BookSerializer, MovieSerializer
+from .models import Book, Movie, Comment
+from .serializers import BookSerializer, MovieSerializer, CommentSerializer
 
 # View to show all books and let you add new ones
 class BookList(generics.ListCreateAPIView):
@@ -22,3 +22,7 @@ class MovieList(generics.ListCreateAPIView):
 class MovieDetails(generics.RetrieveUpdateDestroyAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
+
+class CommentListCreateView(generics.ListCreateAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
