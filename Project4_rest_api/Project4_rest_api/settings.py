@@ -25,12 +25,15 @@ SECRET_KEY = 'django-insecure-s6jwc@n=l-ort1m+oqvjk_n_$veb_yu=&6-c8w#=x^uen=jtwl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '3.83.236.184']
+ALLOWED_HOSTS = ['localhost','127.0.0.1', '3.83.236.184']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+  'django.contrib.sites',
+    'django_comments',
+    'django_comments_xtd',
     'corsheaders',
     'rest_framework',
     'books_movies_api',
@@ -52,9 +55,16 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+COMMENTS_APP = 'django_comments_xtd'
+SITE_ID = 1
 
+COMMENTS_XTD_MAX_THREAD_LEVEL = 2 
 CORS_ALLOW_ALL_ORIGINS = True
-
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # For development
+DEFAULT_FROM_EMAIL = 'webmaster@localhost'
+COMMENTS_XTD_FROM_EMAIL = 'webmaster@localhost'
+COMMENTS_XTD_CONTACT_EMAIL = 'support@localhost'
+COMMENTS_XTD_SALT = b"your-secret-salt"
 ROOT_URLCONF = 'Project4_rest_api.urls'
 
 TEMPLATES = [
@@ -82,8 +92,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'bakendproject4_api',
-        'USER': 'ubuntu',
-        'PASSWORD': 'ubuntu',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': 'localhost'
     }
 }
