@@ -11,21 +11,11 @@ class MovieSerializer(serializers.ModelSerializer):
 # Serializer for Book (includes the related movie)
 class BookSerializer(serializers.ModelSerializer):
     movie = MovieSerializer(read_only=True)
-
+    # Have to add this because
+    movie_id = serializers.PrimaryKeyRelatedField(
+        queryset=Movie.objects.all(), source='movie', write_only=True, allow_null=True
+    )
     class Meta:
         model = Book
-        fields = ['id', 'title', 'date', 'category', 'movie']
+        fields = ['id', 'title', 'date', 'category', 'movie', 'movie_id']
 
-class CommentSerializer(serializers.ModelSerializer):
-    user = serializers.StringRelatedField(read_only=True)
-    content = serializers.CharField(source='comment')
-    created_at = serializers.DateTimeField(source='submit_date', read_only=True)
-    class Meta:
-        model = Comment
-        fields = [
-            'id', 'user', 'user_name', 'user_email', 'user_url',
-            'content', 'created_at', 'is_public', 'is_removed',
-            # Add xtd fields if needed, e.g., 'parent', 'thread_id', 'level'
-            # 'parent' is ForeignKey, often serialized as ID or nested serializer
-        ]
-        read_only_fields = ['user', 'created_at', 'is_public', 'is_removed']
