@@ -92,8 +92,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'bakendproject4_api',
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'ubuntu',
+        'PASSWORD': 'ubuntu',
         'HOST': 'localhost'
     }
 }
