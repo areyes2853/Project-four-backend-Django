@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Book, Movie
-from django_comments.models import Comment
+
 
 # Serializer for Movie 
 class MovieSerializer(serializers.ModelSerializer):
