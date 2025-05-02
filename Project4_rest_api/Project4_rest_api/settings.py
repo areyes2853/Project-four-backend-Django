@@ -25,11 +25,8 @@ SECRET_KEY = 'django-insecure-s6jwc@n=l-ort1m+oqvjk_n_$veb_yu=&6-c8w#=x^uen=jtwl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD
+
 ALLOWED_HOSTS = ['localhost','127.0.0.1', '3.83.236.184']
-=======
-ALLOWED_HOSTS = []
->>>>>>> parent of f0bc274 (Merge pull request #6 from areyes2853/angel)
 
 
 # Application definition
@@ -93,15 +90,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'bakendproject4_api',
-        'USER': '',
-        'PASSWORD': '',
-<<<<<<< HEAD
-        'USER': '',
-        'PASSWORD': '',
-        'USER': '',
-        'PASSWORD': '',
-=======
->>>>>>> parent of f0bc274 (Merge pull request #6 from areyes2853/angel)
+        'USER': 'ubuntu',
+        'PASSWORD': 'ubuntu',
         'HOST': 'localhost'
     }
 }
