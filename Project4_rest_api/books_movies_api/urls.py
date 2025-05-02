@@ -6,12 +6,13 @@ from rest_framework.routers import DefaultRouter
 from .views import (
     BookList, BookDetails,
     MovieList, MovieDetails,
-    CommentViewSet
+    CommentViewSet,ContentTypeViewSet
 )
 
 # Set up DRF router for comments
 router = DefaultRouter()
 router.register(r'comments', CommentViewSet, basename='comment')
+router.register(r'contenttypes', ContentTypeViewSet)
 
 urlpatterns = [
     # Book endpoints

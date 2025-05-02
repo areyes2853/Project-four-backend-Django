@@ -27,7 +27,14 @@ class CustomXtdCommentForm(forms.ModelForm):
         self.fields['user_email'].required = False
         self.fields['user_url'].required = False
         # Uncomment to make other fields optional:
-        # self.fields['object_pk'].required = False
+        self.fields['site'].initial = 'example.com'
+        self.fields['object_pk'].required = False
+         # Set default value for 'site' field to example.com
+        # try:
+        #     default_site = Site.objects.get(domain='example.com')
+        #     self.fields['site'].initial = default_site.pk
+        # except Site.DoesNotExist:
+        #     pass
         # self.fields['content_type'].required = False
 
 # Custom admin class using the form

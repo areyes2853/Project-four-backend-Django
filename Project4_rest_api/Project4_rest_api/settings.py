@@ -33,6 +33,7 @@ COMMENTS_APP = 'django_comments_xtd'
 SITE_ID = 1
 
 INSTALLED_APPS = [
+  'django_filters',
   'django.contrib.sites',
     'django_comments',
     'django_comments_xtd',
