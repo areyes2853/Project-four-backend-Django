@@ -31,9 +31,6 @@ ALLOWED_HOSTS = ['localhost','127.0.0.1', '3.83.236.184']
 # Application definition
 
 INSTALLED_APPS = [
-  'django.contrib.sites',
-    'django_comments',
-    'django_comments_xtd',
     'corsheaders',
     'rest_framework',
     'books_movies_api',
