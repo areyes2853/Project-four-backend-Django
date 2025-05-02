@@ -2,27 +2,27 @@
 
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
+
 from .views import (
-    BookList, MovieList, BookDetails, MovieDetails,
-    CommentViewSet, site_comments_view, add_site_comment_view
+    BookList, BookDetails,
+    MovieList, MovieDetails,
+    CommentViewSet
 )
 
+# Set up DRF router for comments
 router = DefaultRouter()
 router.register(r'comments', CommentViewSet, basename='comment')
 
 urlpatterns = [
-    # Book URLs
-    path('books/', BookList.as_view()),
-    path('books/<int:pk>/', BookDetails.as_view()),
+    # Book endpoints
+    path('books/', BookList.as_view(), name='book-list'),
+    path('books/<int:pk>/', BookDetails.as_view(), name='book-detail'),
 
-    # Movie URLs
-    path('movies/', MovieList.as_view()),
-    path('movies/<int:pk>/', MovieDetails.as_view()),
+    # Movie endpoints
+    path('movies/', MovieList.as_view(), name='movie-list'),
+    path('movies/<int:pk>/', MovieDetails.as_view(), name='movie-detail'),
 
-    # API comment system (with model support)
+
+    # Comment endpoints (via router)
     path('', include(router.urls)),
-
-    # Site-wide comment (not model-specific)
-    path('site-comments/', site_comments_view, name='site_comments'),
-    path('site-comments/add/', add_site_comment_view, name='add_site_comment'),
 ]

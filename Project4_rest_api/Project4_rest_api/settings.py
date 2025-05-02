@@ -29,6 +29,8 @@ ALLOWED_HOSTS = ['localhost','127.0.0.1', '3.83.236.184']
 
 
 # Application definition
+COMMENTS_APP = 'django_comments_xtd'
+SITE_ID = 1
 
 INSTALLED_APPS = [
   'django.contrib.sites',
@@ -55,8 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-COMMENTS_APP = 'django_comments_xtd'
-SITE_ID = 1
+
 
 COMMENTS_XTD_MAX_THREAD_LEVEL = 2 
 CORS_ALLOW_ALL_ORIGINS = True
