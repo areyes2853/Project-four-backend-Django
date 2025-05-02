@@ -94,6 +94,8 @@ DATABASES = {
         'NAME': 'bakendproject4_api',
         'USER': '',
         'PASSWORD': '',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': 'localhost'
     }
 }
