@@ -25,10 +25,13 @@ SECRET_KEY = 'django-insecure-s6jwc@n=l-ort1m+oqvjk_n_$veb_yu=&6-c8w#=x^uen=jtwl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1', '3.83.236.184']
+ALLOWED_HOSTS = ['localhost','127.0.0.1', 'pageandpicture.duckdns.org', '54.88.117.91']
 
 
 # Application definition
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 COMMENTS_APP = 'django_comments_xtd'
 SITE_ID = 1
 
